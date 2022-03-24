@@ -1,0 +1,20 @@
+<section class="contact" id="contact">
+    <div class="contenedor">
+        <h2>Contact</h2>
+    
+            <div class="form-grid">
+                <form action="{{ url_for('auth.home') }}" method="post">
+                    {{ form.hidden_tag() }}
+                    {{ form.nombre.label }}
+                    {{ form.nombre }}
+                    {{ form.apellido.label }}
+                    {{ form.apellido }}
+                    {{ form.correo.label }}
+                    {{ form.correo }}
+                    {{ form.comentario.label }}
+                    {{ form.comentario }}
+                    {{ form.submit }}
+                </form>
+            </div>
+    </div>
+</section>

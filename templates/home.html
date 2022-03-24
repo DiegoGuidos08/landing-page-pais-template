@@ -1,0 +1,112 @@
+<body>
+{%extends 'layout.html'%}
+{% block customCSS %} <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"> {% endblock customCSS %}
+{%block title%} Alemania {%endblock%}
+{%block contents%}
+<h1>Alemania</h1>
+<div class="social">
+    <a href="https://www.facebook.com/diego.guidosbarrera"><img src="https://i.pinimg.com/550x/8c/c7/4b/8cc74bfbefd94a7c24d9d666a51f0623.jpg" width="40" height="40"></a>
+    <a href="https://www.instagram.com/diegoguidos08/?hl=es-la"><img src="https://cdn-icons-png.flaticon.com/512/1409/1409946.png"width="40" height="40" ></a>
+    <a href="https://twitter.com/DiegoGui2"><img src="https://cdn.icon-icons.com/icons2/895/PNG/512/Twitter_icon_icon-icons.com_69154.png" width="40" height="40"></a>
+</div>
+<div class="container"> 
+    <ul class="slider">
+        <li id="slide1">
+            <img src="https://static.dw.com/image/37401943_403.jpg "/>
+        </li>
+        <li id="slide2">
+            <img src="https://www.guiadealemania.com/wp-content/uploads/2021/09/berlin.jpg"/>
+        </li>
+        <li id="slide3">
+            <img src="https://besthqwallpapers.com/Uploads/14-3-2020/124480/thumb2-allianz-arena-german-football-stadium-munich-germany-fc-bayern-munich-stadium.jpg"/>
+        </li>
+    </ul>
+
+    <ul class = 'menu'>
+        <li>
+            <a href="#slide1">1</a>
+        </li>
+        <li>
+            <a href="#slide2">2</a>
+        </li>
+        <li>
+            <a href="#slide3">3</a>
+        </li>
+    </ul>
+</div>
+<section id="services" class="services">
+    <div class="iconos">
+        <h2>Estadisticas</h2>
+        
+        <div class="services-grid">
+
+            <div class="service">
+                <figure class="img-box">
+                    <img src="https://cdn-icons-png.flaticon.com/512/951/951123.png" alt="Población" class="img"/>
+                </figure>
+                <div class="content">
+                    <h3>Población</h3>
+                    <p>
+                        Alemania cerró 2020 con una población de 83.155.031 personas, lo que supone un descenso de 11.680 personas respecto a 2019, en el que la población fue de 83.166.711 personas.
+                        está entre los países con más población del mundo, dentro del ranking de 196 estados que componen la tabla de población mundial de datosmacro.com
+                    </p>
+                </div>
+            </div>
+
+            <div class="service">
+                <figure class="img-box">
+                    <img src="https://cdn-icons.flaticon.com/png/512/4041/premium/4041066.png?token=exp=1648007313~hmac=a1a1b49efa89bec74192df1647de04eb" alt="PIB" class="img" />
+                </figure>
+                <div class="content">
+                    <h3>PIB</h3>
+                    <p>
+                        El producto interior bruto de Alemania en 2021 ha crecido un 2,9% respecto a 2020. Se trata de una tasa 75 décimas mayor que la de 2020, que fue del -4,6%.
+                        En 2021 la cifra del PIB fue de 3.570.620 M€, con lo que Alemania es la 4ª economía en el ranking de los 196 países de los que publicamos el PIB. El valor absoluto del PIB en Alemania creció 203.060 M€ respecto a 2020.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="service">
+                <figure class="img-box">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2643/2643249.png" alt="Deuda" class="img" />
+                </figure>
+                <div class="content">
+                    <h3>Deuda Pública</h3>
+                    <p>
+                        La deuda pública en Alemania en 2020 fue de 2.314.330 millones de euros, 
+                        creció 267.658 millones desde 2019 cuando fue de 2.046.672 millones de euros, está entre los países con más deuda del mundo.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id = "todo" class="todo">
+    <div section="c-img" class="c-img">
+        <img src="https://pbs.twimg.com/profile_images/1207000796560318466/RoIOqwAi_400x400.jpg" height="400" width="400">
+        <div class="txt">
+            <h2>Diego Alejandro Guidos Barrera</h2>
+            <h3>Estudiante de ingeniería de Negocios</h3>
+            <p><a href="https://github.com/DiegoGuidos08">Usuario de Github</a></p>
+        </div>
+    </div>
+</section>
+<br>
+<section id = "contacto" class="contacto">
+    <h3>Contacto</h3>
+    <form action="{{ url_for('auth.home') }}" method="post">
+        {{ form.hidden_tag() }}
+        {{ form.nombre.label }}
+        {{ form.nombre }}
+        {{ form.apellido.label }}
+        {{ form.apellido }}
+        {{ form.correo.label }}
+        {{ form.correo }}
+        {{ form.mensaje.label }}
+        {{ form.mensaje }}
+        {{ form.submit }}
+    </form>
+</section>
+<br>
+{%endblock%}
+</body>
